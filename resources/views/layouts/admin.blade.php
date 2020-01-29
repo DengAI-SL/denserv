@@ -54,6 +54,9 @@
         @include('partials.menu')
         <div class="content-wrapper" style="min-height: 917px;">
             <!-- Main content -->
+            <section class="content-header">
+                @yield('header')
+            </section>
             <section class="content" style="padding-top: 20px">
                 @yield('content')
             </section>
@@ -62,7 +65,7 @@
 
         <footer class="main-footer">
             <div class="float-right d-none d-sm-block">
-                <b>Version</b> 3.0.0-alpha
+                <b>Version</b> 1.0.0-alpha
             </div>
             <strong> &copy;</strong> {{ trans('global.allRightsReserved') }}
         </footer>

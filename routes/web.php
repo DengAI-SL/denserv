@@ -22,3 +22,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('users', 'UsersController');
 
 });
+
+Route::group(['prefix' => 'user', 'as' => 'user.', 'namespace' => 'User', 'middleware' => ['auth']], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+
+    Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
+
+    Route::resource('patients', 'PatientsController');
+
+});

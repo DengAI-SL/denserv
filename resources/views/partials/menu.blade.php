@@ -1,12 +1,22 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="min-height: 917px;">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
-        <span class="brand-text font-weight-light">Project</span>
+    <a href="/" class="brand-link">
+        <img src="/img/dengue.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+             style="opacity: .8">
+        <span class="brand-text font-weight-light">DenServ</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <!-- Sidebar user (optional) -->
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="/img/person-man.png" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">{{Auth::user()->name}}</a>
+            </div>
+        </div>
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -65,6 +75,34 @@
                                         </i>
                                         <p>
                                             <span>{{ trans('global.user.title') }}</span>
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                        </ul>
+                    </li>
+                @endcan
+
+                @can('patient_management_access')
+                    <li class="nav-item has-treeview {{ request()->is('user/patients*') ? 'menu-open' : '' }} {{ request()->is('user/patient*') ? 'menu-open' : '' }}">
+                        <a class="nav-link nav-dropdown-toggle">
+                            <i class="fas fa-users">
+
+                            </i>
+                            <p>
+                                <span>{{ trans('global.patientManagement.title') }}</span>
+                                <i class="right fa fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            @can('patient_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("user.patients.index") }}" class="nav-link {{ request()->is('user/patients') || request()->is('user/patients/*') ? 'active' : '' }}">
+                                        <i class="fas fa-unlock-alt">
+
+                                        </i>
+                                        <p>
+                                            <span>{{ trans('global.patient.title') }}</span>
                                         </p>
                                     </a>
                                 </li>

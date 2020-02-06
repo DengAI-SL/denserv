@@ -81,23 +81,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-flex flex-row">
-                    <div class="col-md-4">
-                        <div class="form-group {{ $errors->has('case_no') ? 'has-error' : '' }}">
-                            <label for="case_no">{{ trans('global.patient.fields.case_no') }}*</label>
-                            <input type="text" id="case_no" name="case_no" class="form-control"
-                                   value="{{ old('case_no', isset($patient) ? $patient->case_no : '') }}">
-                            @if($errors->has('case_no'))
-                                <p class="help-block">
-                                    {{ $errors->first('case_no') }}
-                                </p>
-                            @endif
-                            <p class="helper-block">
-                                {{ trans('global.patient.fields.case_no_helper') }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                {{--<div class="d-flex flex-row">--}}
+                    {{--<div class="col-md-4">--}}
+                        {{--<div class="form-group {{ $errors->has('case_no') ? 'has-error' : '' }}">--}}
+                            {{--<label for="case_no">{{ trans('global.patient.fields.case_no') }}*</label>--}}
+                            {{--<input type="text" id="case_no" name="case_no" class="form-control"--}}
+                                   {{--value="{{ old('case_no', isset($patient) ? $patient->case_no : '') }}">--}}
+                            {{--@if($errors->has('case_no'))--}}
+                                {{--<p class="help-block">--}}
+                                    {{--{{ $errors->first('case_no') }}--}}
+                                {{--</p>--}}
+                            {{--@endif--}}
+                            {{--<p class="helper-block">--}}
+                                {{--{{ trans('global.patient.fields.case_no_helper') }}--}}
+                            {{--</p>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
                 <div class="d-flex flex-row">
                     <div class="col-md-4">
 
@@ -336,29 +336,29 @@
                     </div>
                 </div>
                 <div class="d-flex flex-row">
-                    <div class="col-md-4">
-                        <div class="form-group {{ $errors->has('DPDHS_area') ? 'has-error' : '' }}">
-                            <label for="DPDHS_area">{{ trans('global.patient.fields.DPDHS_area') }}*</label>
-                            <select id="DPDHS_area" name="DPDHS_area" class="form-control select2" style="width: 100%;">
-                                <option
-                                    selected="selected">{{ old('DPDHS_area', isset($patient) ? $patient->DPDHS_area: '') }}</option>
-                                <option>Alaska</option>
-                                <option>California</option>
-                                <option>Delaware</option>
-                                <option>Tennessee</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
-                            </select>
-                            @if($errors->has('DPDHS_area'))
-                                <p class="help-block">
-                                    {{ $errors->first('DPDHS_area') }}
-                                </p>
-                            @endif
-                            <p class="helper-block">
-                                {{ trans('global.patient.fields.DPDHS_area_helper') }}
-                            </p>
-                        </div>
-                    </div>
+                    {{--<div class="col-md-4">--}}
+                        {{--<div class="form-group {{ $errors->has('DPDHS_area') ? 'has-error' : '' }}">--}}
+                            {{--<label for="DPDHS_area">{{ trans('global.patient.fields.DPDHS_area') }}*</label>--}}
+                            {{--<select id="DPDHS_area" name="DPDHS_area" class="form-control select2" style="width: 100%;">--}}
+                                {{--<option--}}
+                                    {{--selected="selected">{{ old('DPDHS_area', isset($patient) ? $patient->DPDHS_area: '') }}</option>--}}
+                                {{--<option>Alaska</option>--}}
+                                {{--<option>California</option>--}}
+                                {{--<option>Delaware</option>--}}
+                                {{--<option>Tennessee</option>--}}
+                                {{--<option>Texas</option>--}}
+                                {{--<option>Washington</option>--}}
+                            {{--</select>--}}
+                            {{--@if($errors->has('DPDHS_area'))--}}
+                                {{--<p class="help-block">--}}
+                                    {{--{{ $errors->first('DPDHS_area') }}--}}
+                                {{--</p>--}}
+                            {{--@endif--}}
+                            {{--<p class="helper-block">--}}
+                                {{--{{ trans('global.patient.fields.DPDHS_area_helper') }}--}}
+                            {{--</p>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                     <div class="col-md-4">
                         <div class="form-group {{ $errors->has('MOH_area') ? 'has-error' : '' }}">
                             <label for="MOH_area">{{ trans('global.patient.fields.MOH_area') }}*</label>

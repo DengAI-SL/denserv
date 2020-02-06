@@ -61,9 +61,9 @@ class UpdatePatientRequest extends FormRequest
             'address' => [
                 'string',
             ],
-            'DPDHS_area' => [
-                'string',
-            ],
+//            'DPDHS_area' => [
+//                'string',
+//            ],
             'MOH_area' => [
                 'string',
             ],

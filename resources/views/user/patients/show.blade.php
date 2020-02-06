@@ -27,12 +27,12 @@
                     </th>
                     <td>{{$patient->notification_at ?? ''}}</td>
                 </tr>
-                <tr>
-                    <th>
-                        {{ trans('global.patient.fields.case_no') }}
-                    </th>
-                    <td>{{$patient->case_no ?? ''}}</td>
-                </tr>
+                {{--<tr>--}}
+                    {{--<th>--}}
+                        {{--{{ trans('global.patient.fields.case_no') }}--}}
+                    {{--</th>--}}
+                    {{--<td>{{$patient->case_no ?? ''}}</td>--}}
+                {{--</tr>--}}
                 <tr>
                     <th>
                         {{ trans('global.patient.fields.name') }}
@@ -75,12 +75,12 @@
                     </th>
                     <td>{{$patient->address ?? ''}}</td>
                 </tr>
-                <tr>
-                    <th>
-                        {{ trans('global.patient.fields.DPDHS_area') }}
-                    </th>
-                    <td>{{$patient->DPDHS_area ?? ''}}</td>
-                </tr>
+                {{--<tr>--}}
+                    {{--<th>--}}
+                        {{--{{ trans('global.patient.fields.DPDHS_area') }}--}}
+                    {{--</th>--}}
+                    {{--<td>{{$patient->DPDHS_area ?? ''}}</td>--}}
+                {{--</tr>--}}
                 <tr>
                     <th>
                         {{ trans('global.patient.fields.MOH_area') }}

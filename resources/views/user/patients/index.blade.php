@@ -31,9 +31,9 @@
                         <th>
                             {{ trans('global.patient.fields.notification_at') }}
                         </th>
-                        <th>
-                            {{ trans('global.patient.fields.case_no') }}
-                        </th>
+                        {{--<th>--}}
+                            {{--{{ trans('global.patient.fields.case_no') }}--}}
+                        {{--</th>--}}
                         <th>
                             {{ trans('global.patient.fields.name') }}
                         </th>
@@ -55,9 +55,9 @@
                         <th>
                             {{ trans('global.patient.fields.address') }}
                         </th>
-                        <th>
-                            {{ trans('global.patient.fields.DPDHS_area') }}
-                        </th>
+                        {{--<th>--}}
+                            {{--{{ trans('global.patient.fields.DPDHS_area') }}--}}
+                        {{--</th>--}}
                         <th>
                             {{ trans('global.patient.fields.MOH_area') }}
                         </th>
@@ -87,9 +87,9 @@
                             <td>
                                 {{ $patient->notification_at ?? '' }}
                             </td>
-                            <td>
-                                {{ $patient->case_no ?? '' }}
-                            </td>
+                            {{--<td>--}}
+                                {{--{{ $patient->case_no ?? '' }}--}}
+                            {{--</td>--}}
                             <td>
                                 {{ $patient->name ?? '' }}
                             </td>
@@ -111,9 +111,9 @@
                             <td>
                                 {{ $patient->address ?? '' }}
                             </td>
-                            <td>
-                                {{ $patient->DPDHS_area ?? '' }}
-                            </td>
+                            {{--<td>--}}
+                                {{--{{ $patient->DPDHS_area ?? '' }}--}}
+                            {{--</td>--}}
                             <td>
                                 {{ $patient->MOH_area ?? '' }}
                             </td>

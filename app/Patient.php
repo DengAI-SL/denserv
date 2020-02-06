@@ -25,7 +25,7 @@ class Patient extends Model
         'hospital',
         'bht_no',
         'notification_at',              // Date of notification
-        'case_no',
+//        'case_no',
         'name',
         'age_years',
         'age_months',
@@ -34,7 +34,7 @@ class Patient extends Model
         'ethnicity',
         'occupation',
         'address',
-        'DPDHS_area',
+//        'DPDHS_area',
         'MOH_area',
         'GN_area',
         'created_at',

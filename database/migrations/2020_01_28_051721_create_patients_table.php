@@ -18,7 +18,7 @@ class CreatePatientsTable extends Migration
             $table->string('hospital');
             $table->string('bht_no');
             $table->dateTime('notification_at')->nullable();
-            $table->string('case_no');
+//            $table->string('case_no');
             $table->string('name');
             $table->integer('age_years')->nullable();
             $table->integer('age_months')->nullable();
@@ -27,7 +27,7 @@ class CreatePatientsTable extends Migration
             $table->string('ethnicity')->nullable();
             $table->string('occupation')->nullable();
             $table->string('address')->nullable();
-            $table->string('DPDHS_area')->nullable();
+//            $table->string('DPDHS_area')->nullable();
             $table->string('MOH_area')->nullable();
             $table->string('GN_area')->nullable();
             $table->dateTime('report_form_filled_at')->nullable();

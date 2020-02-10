@@ -43,6 +43,14 @@
                         @endforeach
                     </td>
                 </tr>
+                <tr>
+                    <th>
+                        {{ trans('global.user.fields.hospital') }}
+                    </th>
+                    <td>
+                        {{ $user->hospital }}
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>

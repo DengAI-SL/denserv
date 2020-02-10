@@ -55,9 +55,9 @@
                         <th>
                             {{ trans('global.patient.fields.address') }}
                         </th>
-                        {{--<th>--}}
-                            {{--{{ trans('global.patient.fields.DPDHS_area') }}--}}
-                        {{--</th>--}}
+                        <th>
+                            {{ trans('global.patient.fields.district') }}
+                        </th>
                         <th>
                             {{ trans('global.patient.fields.MOH_area') }}
                         </th>
@@ -111,9 +111,9 @@
                             <td>
                                 {{ $patient->address ?? '' }}
                             </td>
-                            {{--<td>--}}
-                                {{--{{ $patient->DPDHS_area ?? '' }}--}}
-                            {{--</td>--}}
+                            <td>
+                                {{ $patient->district ?? '' }}
+                            </td>
                             <td>
                                 {{ $patient->MOH_area ?? '' }}
                             </td>

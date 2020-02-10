@@ -31,6 +31,10 @@ class StoreUserRequest extends FormRequest
                 'required',
                 'array',
             ],
+            'hospital'  => [
+                'required',
+                'exists:hospitals,hospital_name',
+            ],
         ];
     }
 }

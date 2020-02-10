@@ -75,12 +75,12 @@
                     </th>
                     <td>{{$patient->address ?? ''}}</td>
                 </tr>
-                {{--<tr>--}}
-                    {{--<th>--}}
-                        {{--{{ trans('global.patient.fields.DPDHS_area') }}--}}
-                    {{--</th>--}}
-                    {{--<td>{{$patient->DPDHS_area ?? ''}}</td>--}}
-                {{--</tr>--}}
+                <tr>
+                    <th>
+                        {{ trans('global.patient.fields.district') }}
+                    </th>
+                    <td>{{$patient->district ?? ''}}</td>
+                </tr>
                 <tr>
                     <th>
                         {{ trans('global.patient.fields.MOH_area') }}

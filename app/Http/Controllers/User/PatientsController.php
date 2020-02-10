@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Hospital;
 use App\Http\Requests\MassDestroyPatientRequest;
 use App\Http\Requests\StorePatientRequest;
 use App\Http\Requests\UpdatePatientRequest;
+use App\LocationsMap;
 use App\Patient;
 use App\User;
 use Illuminate\Http\Request;
@@ -28,7 +30,14 @@ class PatientsController extends Controller
 
 //        $roles = Role::all()->pluck('title', 'id');
         $roles = [];
-        return view('user.patients.create', compact('roles'));
+        $hospitals= Hospital::where('hospital_name','!=','ALL')->get();
+        $districts = LocationsMap::distinct()->orderBy("district_name")->pluck("district_name");
+
+        $MOH_areas = LocationsMap::distinct()->orderBy("moh_name")->pluck("moh_name");
+
+        $GN_areas = LocationsMap::distinct()->orderBy("gnd_name")->pluck("gnd_name");
+
+        return view('user.patients.create', compact('hospitals','districts','MOH_areas','GN_areas'));
     }
 
     public function store(StorePatientRequest $request)
@@ -46,8 +55,14 @@ class PatientsController extends Controller
     {
         abort_unless(\Gate::allows('patient_edit'), 403);
 
+        $hospitals= Hospital::where('hospital_name','!=','ALL')->get();
+        $districts = LocationsMap::distinct()->orderBy("district_name")->pluck("district_name");
 
-        return view('user.patients.edit', compact('patient'));
+        $MOH_areas = LocationsMap::distinct()->orderBy("moh_name")->pluck("moh_name");
+
+        $GN_areas = LocationsMap::distinct()->orderBy("gnd_name")->pluck("gnd_name");
+
+        return view('user.patients.edit', compact('patient','hospitals','districts','MOH_areas','GN_areas'));
     }
 
     public function update(UpdatePatientRequest $request, Patient $patient)

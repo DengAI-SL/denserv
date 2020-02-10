@@ -10,15 +10,15 @@ class RolesTableSeeder extends Seeder
         $roles = [[
             'id'         => 1,
             'title'      => 'Admin',
-            'created_at' => '2019-04-15 19:13:32',
-            'updated_at' => '2019-04-15 19:13:32',
+            'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+            'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'deleted_at' => null,
         ],
             [
                 'id'         => 2,
                 'title'      => 'User',
-                'created_at' => '2019-04-15 19:13:32',
-                'updated_at' => '2019-04-15 19:13:32',
+                'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
                 'deleted_at' => null,
             ]];
 

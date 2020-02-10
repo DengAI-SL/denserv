@@ -12,9 +12,10 @@ class UsersTableSeeder extends Seeder
             'name'           => 'Admin',
             'email'          => 'admin@admin.com',
             'password'       => '$2y$10$imU.Hdz7VauIT3LIMCMbsOXvaaTQg6luVqkhfkBcsUd.SJW2XSRKO',
+            'hospital'      =>  'ALL',
             'remember_token' => null,
-            'created_at'     => '2019-04-15 19:13:32',
-            'updated_at'     => '2019-04-15 19:13:32',
+            'created_at'     => Carbon\Carbon::now()->toDateTimeString(),
+            'updated_at'     => Carbon\Carbon::now()->toDateTimeString(),
             'deleted_at'     => null,
         ]];
 

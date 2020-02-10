@@ -39,6 +39,7 @@ class UpdatePatientRequest extends FormRequest
 //            ],
             'name' => [
                 'required',
+                'string'
             ],
             'age_years' => [
                 'integer',
@@ -47,29 +48,34 @@ class UpdatePatientRequest extends FormRequest
                 'integer',
             ],
             'date_of_birth' => [
+                'nullable',
                 'date',
             ],
             'gender' => [
                 'string',
             ],
             'ethnicity' => [
+                'nullable',
                 'string',
             ],
             'occupation' => [
+                'nullable',
                 'string',
             ],
             'address' => [
                 'string',
             ],
-//            'DPDHS_area' => [
-//                'string',
-//            ],
+            'district' => [
+                'string',
+            ],
             'MOH_area' => [
                 'string',
             ],
             'GN_area' => [
+                'nullable',
                 'string',
             ],
+
         ];
     }
 }

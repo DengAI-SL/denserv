@@ -34,7 +34,7 @@ class Patient extends Model
         'ethnicity',
         'occupation',
         'address',
-//        'DPDHS_area',
+        'district',
         'MOH_area',
         'GN_area',
         'created_at',

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Hospital;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyUserRequest;
 use App\Http\Requests\StoreUserRequest;
@@ -25,8 +26,9 @@ class UsersController extends Controller
         abort_unless(\Gate::allows('user_create'), 403);
 
         $roles = Role::all()->pluck('title', 'id');
-
-        return view('admin.users.create', compact('roles'));
+        $hospitals = Hospital::all();
+//        var_dump($hospitals);
+        return view('admin.users.create', compact('roles','hospitals'));
     }
 
     public function store(StoreUserRequest $request)
@@ -47,7 +49,9 @@ class UsersController extends Controller
 
         $user->load('roles');
 
-        return view('admin.users.edit', compact('roles', 'user'));
+        $hospitals = Hospital::all();
+
+        return view('admin.users.edit', compact('roles', 'user','hospitals'));
     }
 
     public function update(UpdateUserRequest $request, User $user)

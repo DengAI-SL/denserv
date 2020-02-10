@@ -65,6 +65,34 @@
                     {{ trans('global.user.fields.roles_helper') }}
                 </p>
             </div>
+            <div class="d-flex flex-row">
+                <div class="col-md-4">
+                    <div class="form-group"
+                         data-toggle="tooltip" data-placement="top" data-html="true"
+                         title="{{ trans('global.patient.fields.hospital_helper') }}">
+                        <label for="hospital">{{ trans('global.patient.fields.hospital') }}</label>
+                        <select id="hospital" name="hospital" class="form-control select2  {{ $errors->has('hospital') ? 'is-invalid' : '' }}" style="width: 100%;" required>
+                            <option
+                                selected="selected">{{ old('hospital', isset($hospital) ? $hospital: '') }}</option>
+                            @foreach($hospitals as $hospital)
+                                <option> {{$hospital->hospital_name}}</option>
+                                @endforeach
+                        </select>
+                        @if($errors->has('hospital'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('hospital') }}
+                            </div>
+                        @else
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                {{ trans('global.patient.fields.hospital_error') }}
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
             <div>
                 <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
             </div>

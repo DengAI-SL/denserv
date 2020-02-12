@@ -73,4 +73,9 @@ class Patient extends Model
 
         $this->attributes['notification_at'] = $value ? Carbon::createFromFormat('Y/m/d', $value)->format('Y-m-d H:i:s') : null;
     }
+
+    public function patientReport()
+    {
+        return $this->hasOne(PatientReport::class);
+    }
 }

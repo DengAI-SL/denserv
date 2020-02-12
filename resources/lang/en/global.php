@@ -343,6 +343,8 @@ return [
     'patient'                              => [
         'title'          => 'Patients',
         'title_singular' => 'Patient',
+        'new_patient'    => 'Add New Patient',
+        'incomplete'     => 'Incomplete Patients',
         'fields'         => [
             'id'                 => 'ID',
             'id_helper'          => '',
@@ -391,6 +393,62 @@ return [
             'districts_placeholder'=> 'Select Patients Home District',
             'MOH_area_placeholder' => 'Select Patients Home MOH Area',
             'GN_area_placeholder' => 'Select Patients Home GN Area',
+        ],
+    ],
+    'create_report' => "Add Report",
+    'edit_report' => "Edit Report",
+    'patient_report'                        =>[
+
+        'title'          => 'Patient Reports',
+        'title_singular' => 'Patient Report',
+        'new_patient'    => 'Add New Patient',
+        'fields'         => [
+            'mode_of_admission' => 'Mode Of Admission',
+            'transferred_from' =>  'Transferred From',
+            'mode_of_admission_val' => [
+                'transferred'   => 'Transferred',
+                'direct_opd'    => 'Direct OPD',
+            ],
+            'date_of_admission' =>  'Date Of Admission',
+            'date_of_onset'     =>  'Date Of Onset',
+            'diagnosed_by'      =>  'Diagnosed By',
+            'diagnosed_by_val'  =>  [
+                'clinical'      =>  'Clinical',
+                'test'          =>  'Lab Test',
+            ],
+            'etiology_by'       =>  'Etiology By',
+            'etiology_by_val'       =>  [
+                'etiology_by_1'  =>      'val1',
+                'etiology_by_2'  =>      'val2',
+                'etiology_by_3'  =>      'val3',
+            ],
+            'date_of_first_FBC' =>  'Date Of First FBC',
+            'first_FBC_count'   =>  'First FBC Count',
+            'diagnosis'         =>  'Diagnosis',
+            'diagnosis_val'     =>  [
+                'diagnosis_1'   => 'DF',
+                'diagnosis_2'   => 'DHF(uncomplicated)',
+                'diagnosis_3'   => 'DHF(complicated)',
+
+            ],
+            'dhf_complication'         =>  'DHF Complications',
+            'dhf_complication_val'     =>  [
+                'dhf_complication_1'   => 'Shock',
+                'dhf_complication_2'   => 'Internal Bleeding',
+                'dhf_complication_3'   => 'Organ Involvement',
+
+            ],
+            'outcome'         =>  'Outcome',
+            'outcome_val'     =>  [
+                'outcome_1'   => 'Discharged',
+                'outcome_2'   => 'Transferred',
+                'outcome_3'   => 'Died',
+                'outcome_4'   => 'Unknown',
+            ],
+            'date_of_outcome'   => 'Date Of Outcome',
+            'if_transferred_hospital'         =>  'Transferred Hospital',
+            'if_transferred_hospital_placeholder'         =>  'Select the transferred hospital',
+
         ],
     ],
 ];

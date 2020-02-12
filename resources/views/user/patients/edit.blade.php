@@ -485,12 +485,14 @@
                                     style="width: 100%;"
                                     required>
                                 <option></option>
-                                @foreach($MOH_areas as $id => $MOH_area)
+                                @if(old('MOH_area', isset($patient) ? $patient->MOH_area:'')!=='')
+                                    {{--@foreach($MOH_areas as $id => $MOH_area)--}}
                                     <option
-                                        value="{{ $MOH_area }}" {{ old('MOH_area', isset($patient) ? $patient->MOH_area:'')==$MOH_area ? 'selected' : '' }}>
-                                        {{ $MOH_area}}
+                                        value="{{ old('MOH_area', isset($patient) ? $patient->MOH_area:'') }}"  selected="selected">
+                                        {{ old('MOH_area', isset($patient) ? $patient->MOH_area:'') }}
                                     </option>
-                                @endforeach
+                                    {{--@endforeach--}}
+                                @endisset
                             </select>
                             @if($errors->has('MOH_area'))
                                 <div class="invalid-feedback">
@@ -510,17 +512,19 @@
                         <div class="form-group" data-toggle="tooltip"
                              data-placement="top" data-html="true"
                              title="{{ trans('global.patient.fields.GN_area_helper') }}">
-                            <label for="GN_area">{{ trans('global.patient.fields.GN_area') }}*</label>
+                            <label for="GN_area">{{ trans('global.patient.fields.GN_area') }}</label>
                             <select id="GN_area" name="GN_area"
                                     class="form-control select2 {{ $errors->has('GN_area') ? 'is-invalid' : '' }}"
                                     style="width: 100%;" required>
                                 <option></option>
-                                @foreach($GN_areas as $id => $GN_area)
+                                @if(old('GN_area', isset($patient) ? $patient->GN_area:'')!=='')
+                                    {{--@foreach($GN_areas as $id => $GN_area)--}}
                                     <option
-                                        value="{{ $GN_area }}" {{ old('GN_area', isset($patient) ? $patient->GN_area:'')==$GN_area ? 'selected' : '' }}>
-                                        {{ $GN_area}}
+                                        value="{{ old('GN_area', isset($patient) ? $patient->GN_area:'') }}"  selected="selected">
+                                        {{ old('GN_area', isset($patient) ? $patient->GN_area:'') }}
                                     </option>
-                                @endforeach
+                                    {{--@endforeach--}}
+                                @endisset
                             </select>
                             @if($errors->has('GN_area'))
                                 <div class="invalid-feedback">

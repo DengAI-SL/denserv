@@ -139,6 +139,42 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => Carbon\Carbon::now()->toDateTimeString(),
                 'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             ],
+            [
+                'id' => '23',
+                'title' => 'patient_report_create',
+                'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+            ],
+            [
+                'id' => '24',
+                'title' => 'patient_report_edit',
+                'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+            ],
+            [
+                'id' => '25',
+                'title' => 'patient_report_show',
+                'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+            ],
+            [
+                'id' => '26',
+                'title' => 'patient_report_delete',
+                'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+            ],
+            [
+                'id' => '27',
+                'title' => 'patient_report_access',
+                'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+            ],
+            [
+                'id' => '28',
+                'title' => 'patient_report_management_access',
+                'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+            ],
         ];
 
         Permission::insert($permissions);

@@ -45,6 +45,7 @@ class StorePatientRequest extends FormRequest
                 'integer',
             ],
             'age_months' => [
+                'nullable',
                 'integer',
             ],
             'date_of_birth' => [

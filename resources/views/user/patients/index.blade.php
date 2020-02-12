@@ -67,6 +67,44 @@
                         <th>
                             {{ trans('global.patient.fields.report_form_filled_at') }}
                         </th>
+                        @isset($patients[0]->patientReport)
+                            <th>
+                                {{ trans('global.patient_report.fields.mode_of_admission') }}
+                            </th>
+                            <th>
+                                {{ trans('global.patient_report.fields.transferred_from') }}
+                            </th>
+                            <th>
+                                {{ trans('global.patient_report.fields.date_of_admission') }}
+                            </th>
+                            <th>
+                                {{ trans('global.patient_report.fields.date_of_onset') }}
+                            </th>
+                            <th>
+                                {{ trans('global.patient_report.fields.diagnosed_by') }}
+                            </th>
+                            <th>
+                                {{ trans('global.patient_report.fields.etiology_by') }}
+                            </th>
+                            <th>
+                                {{ trans('global.patient_report.fields.date_of_first_FBC') }}
+                            </th>
+                            <th>
+                                {{ trans('global.patient_report.fields.diagnosis') }}
+                            </th>
+                            <th>
+                                {{ trans('global.patient_report.fields.dhf_complication') }}
+                            </th>
+                            <th>
+                                {{ trans('global.patient_report.fields.outcome') }}
+                            </th>
+                            <th>
+                                {{ trans('global.patient_report.fields.date_of_outcome') }}
+                            </th>
+                            <th>
+                                {{ trans('global.patient_report.fields.if_transferred_hospital') }}
+                            </th>
+                            @endisset
                         <th>
                             &nbsp;
                         </th>
@@ -123,6 +161,49 @@
                             <td>
                                 {{ $patient->report_form_filled_at ?? '' }}
                             </td>
+                            @isset($patient->patientReport)
+                                <td>
+                                    {{$patient->patientReport->mode_of_admission}}
+                                </td>
+                                <td>
+                                    {{$patient->patientReport->transferred_from}}
+                                </td>
+                                <td>
+                                    {{$patient->patientReport->date_of_admission}}
+                                </td>
+                                <td>
+                                    {{$patient->patientReport->date_of_onset}}
+                                </td>
+                                <td>
+                                    {{$patient->patientReport->diagnosed_by}}
+                                </td>
+                                <td>
+                                    @foreach($patient->patientReport->etiology_by as $item)
+                                        <span class="badge badge-info">{{ $item }}</span>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    {{$patient->patientReport->date_of_first_FBC}}
+                                </td>
+                                <td>
+                                    @foreach($patient->patientReport->diagnosis as $item)
+                                        <span class="badge badge-primary">{{ $item }}</span>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach($patient->patientReport->dhf_complication as $item)
+                                        <span class="badge badge-danger">{{ $item }}</span>
+                                    @endforeach
+                                </td><td>
+                                    {{$patient->patientReport->outcome}}
+                                </td>
+                                <td>
+                                    {{$patient->patientReport->date_of_outcome}}
+                                </td>
+                                <td>
+                                    {{$patient->patientReport->if_transferred_hospital}}
+                                </td>
+                                @endisset
                             {{--<td>--}}
                                 {{--@foreach($patient->roles as $key => $item)--}}
                                     {{--<span class="badge badge-info">{{ $item->title }}</span>--}}
@@ -146,6 +227,19 @@
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
                                     </form>
                                 @endcan
+                                @if($patient->report_form_filled_at == '')
+                                    @can('patient_report_create')
+                                            <a class="btn btn-xs btn-outline-success" href="{{ route('user.patient_reports.create', $patient->id) }}">
+                                                {{ trans('global.create_report') }}
+                                            </a>
+                                        @endcan
+                                    @else
+                                        @can('patient_report_edit')
+                                            <a class="btn btn-xs btn-outline-info" href="{{ route('user.patient_reports.edit', $patient->id) }}">
+                                                {{ trans('global.edit_report') }}
+                                            </a>
+                                            @endcan
+                                @endif
                             </td>
 
                         </tr>

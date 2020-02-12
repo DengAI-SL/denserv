@@ -111,6 +111,120 @@
                     </th>
                     <td>{{$patient->updated_at ?? ''}}</td>
                 </tr>
+                @isset($patient->patientReport)
+
+                    <tr>
+                        <th>
+                            {{ trans('global.patient_report.fields.mode_of_admission') }}
+                        </th>
+                        <td>
+                            {{$patient->patientReport->mode_of_admission}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('global.patient_report.fields.transferred_from') }}
+                        </th>
+
+                        <td>
+                            {{$patient->patientReport->transferred_from}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('global.patient_report.fields.date_of_admission') }}
+                        </th>
+
+                        <td>
+                            {{$patient->patientReport->date_of_admission}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('global.patient_report.fields.date_of_onset') }}
+                        </th>
+                        <td>
+                            {{$patient->patientReport->date_of_onset}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('global.patient_report.fields.diagnosed_by') }}
+                        </th>
+                        <td>
+                            {{$patient->patientReport->diagnosed_by}}
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('global.patient_report.fields.etiology_by') }}
+                        </th>
+                        <td>
+                            @foreach($patient->patientReport->etiology_by as $item)
+                                <span class="badge badge-info">{{ $item }}</span>
+                            @endforeach
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('global.patient_report.fields.date_of_first_FBC') }}
+                        </th>
+                        <td>
+                            {{$patient->patientReport->date_of_first_FBC}}
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('global.patient_report.fields.diagnosis') }}
+                        </th>
+                        <td>
+                            @foreach($patient->patientReport->diagnosis as $item)
+                                <span class="badge badge-primary">{{ $item }}</span>
+                            @endforeach
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('global.patient_report.fields.dhf_complication') }}
+                        </th>
+                        <td>
+                            @foreach($patient->patientReport->dhf_complication as $item)
+                                <span class="badge badge-danger">{{ $item }}</span>
+                            @endforeach
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('global.patient_report.fields.outcome') }}
+                        </th>
+
+                        <td>
+                            {{$patient->patientReport->outcome}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('global.patient_report.fields.date_of_outcome') }}
+                        </th>
+
+                        <td>
+                            {{$patient->patientReport->date_of_outcome}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('global.patient_report.fields.if_transferred_hospital') }}
+                        </th>
+
+                        <td>
+                            {{$patient->patientReport->if_transferred_hospital}}
+                        </td>
+                    </tr>
+                    @endisset
                 </tbody>
             </table>
         </div>

@@ -97,12 +97,40 @@
                         <ul class="nav nav-treeview">
                             @can('patient_access')
                                 <li class="nav-item">
-                                    <a href="{{ route("user.patients.index") }}" class="nav-link {{ request()->is('user/patients') || request()->is('user/patients/*') ? 'active' : '' }}">
+                                    <a href="{{ route("user.patients.index") }}" class="nav-link {{ request()->is('user/patients') ? 'active' : '' }}">
                                         <i class="fas fa-unlock-alt">
 
                                         </i>
                                         <p>
                                             <span>{{ trans('global.patient.title') }}</span>
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            @can('patient_create')
+                                <li class="nav-item">
+                                    <a href="{{ route("user.patients.create") }}" class="nav-link {{ request()->is('user/patients/create') ? 'active' : '' }}">
+                                        <i class="fas fa-unlock-alt">
+
+                                        </i>
+                                        <p>
+                                            <span>{{ trans('global.patient.new_patient') }}</span>
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            @can('patient_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("user.patients.incomplete") }}" class="nav-link {{ request()->is('user/patient/incomplete') ? 'active' : '' }}">
+                                        <i class="fas fa-unlock-alt">
+
+                                        </i>
+                                        <p>
+                                            <span>{{ trans('global.patient.incomplete') }}</span>
                                         </p>
                                     </a>
                                 </li>

@@ -313,7 +313,7 @@ return [
     'deselect_all'                         => 'Deselect all',
     'team-management'                      => 'Teams',
     'team-management-singular'             => 'Team',
-    'site_title'                           => 'DenServ - Dengue Surveillance',
+    'site_title'                           => 'Advanced Dengue Surveillance',
     'userManagement'                       => [
         'title'          => 'User Management',
         'title_singular' => 'User Management',

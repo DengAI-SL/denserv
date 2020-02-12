@@ -515,7 +515,7 @@
                             <label for="GN_area">{{ trans('global.patient.fields.GN_area') }}</label>
                             <select id="GN_area" name="GN_area"
                                     class="form-control select2 {{ $errors->has('GN_area') ? 'is-invalid' : '' }}"
-                                    style="width: 100%;" required>
+                                    style="width: 100%;" >
                                 <option></option>
                                 @if(old('GN_area', isset($patient) ? $patient->GN_area:'')!=='')
                                     {{--@foreach($GN_areas as $id => $GN_area)--}}

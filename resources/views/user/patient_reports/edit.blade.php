@@ -163,7 +163,7 @@
                              title="{{ trans('global.patient.fields.diagnosed_by_helper') }}">
                             <div class="row">
                                 <label
-                                    for="diagnosed_by">{{ trans('global.patient_report.fields.diagnosed_by') }} </label>
+                                    for="diagnosed_by">{{ trans('global.patient_report.fields.diagnosed_by') }}* </label>
                             </div>
                             <div class="form-control {{ $errors->has('diagnosed_by') ? 'is-invalid' : '' }}">
                                 <div class="icheck-success d-inline">
@@ -177,7 +177,7 @@
                                            @if(strpos(old('diagnosed_by'),'clinical')!==false)
                                            checked
                                         @endif
-                                        @endempty>
+                                        @endempty required>
                                     <label for="clinical">
                                         1. {{ trans('global.patient_report.fields.diagnosed_by_val.clinical') }}
                                     </label>
@@ -251,7 +251,7 @@
                                         @endif
                                         @endempty>
                                     <label for="etiology_by_2">
-                                        1. {{trans('global.patient_report.fields.etiology_by_val.etiology_by_2')}}
+                                        2. {{trans('global.patient_report.fields.etiology_by_val.etiology_by_2')}}
                                     </label>
                                 </div>
                                 <div class="icheck-primary d-inline">
@@ -267,7 +267,7 @@
                                         @endif
                                         @endempty>
                                     <label for="etiology_by_3">
-                                        1. {{trans('global.patient_report.fields.etiology_by_val.etiology_by_3')}}
+                                        3. {{trans('global.patient_report.fields.etiology_by_val.etiology_by_3')}}
                                     </label>
                                 </div>
                             </div>
@@ -491,7 +491,7 @@
                              title="{{ trans('global.patient.fields.outcome_helper') }}">
                             <div class="row">
                                 <label
-                                    for="outcome">{{ trans('global.patient_report.fields.outcome') }} </label>
+                                    for="outcome">{{ trans('global.patient_report.fields.outcome') }}* </label>
                             </div>
                             <div class="form-control {{ $errors->has('outcome') ? 'is-invalid' : '' }}">
                                 <div class="icheck-success d-inline">
@@ -506,7 +506,7 @@
                                            @if(trans('global.patient_report.fields.outcome_val.outcome_1')===old('outcome',''))
                                            checked
                                         @endif
-                                        @endempty>
+                                        @endempty required>
                                     <label for="outcome_1">
                                         1. {{trans('global.patient_report.fields.outcome_val.outcome_1')}}
                                     </label>

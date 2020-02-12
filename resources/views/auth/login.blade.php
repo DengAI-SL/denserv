@@ -10,6 +10,11 @@
     </div>
     <div class="card">
         <div class="card-body login-card-body">
+            <a href="/" class="brand-link">
+                <img src="/img/dengue.png" alt="DenServ Logo" class="brand-image img-circle elevation-2"
+                     style="opacity: .8">
+                {{--<span class="brand-text font-weight-light">DenServ</span>--}}
+            </a>
             <p class="login-box-msg">Sign in to start your session</p>
             @if(\Session::has('message'))
                 <p class="alert alert-info">
@@ -21,6 +26,11 @@
                 <div class="form-group has-feedback">
                     <div class="input-group">
                         <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="{{ trans('global.login_email') }}" name="email">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
                         @error('email')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -31,6 +41,11 @@
                 <div class="form-group has-feedback">
                     <div class="input-group">
                         <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="{{ trans('global.login_password') }}" name="password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user-secret"></span>
+                            </div>
+                        </div>
                         @error('password')
                             <div class="invalid-feedback">
                                 {{ $message }}

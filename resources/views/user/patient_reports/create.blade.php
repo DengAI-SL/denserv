@@ -270,6 +270,22 @@
                                         3. {{trans('global.patient_report.fields.etiology_by_val.etiology_by_3')}}
                                     </label>
                                 </div>
+                                <div class="icheck-primary d-inline">
+                                    <input type="checkbox" id="etiology_by_4" value="{{trans('global.patient_report.fields.etiology_by_val.etiology_by_3')}}"
+                                           name="etiology_by[]" @isset($patient_report)
+                                           @if(in_array(trans('global.patient_report.fields.etiology_by_val.etiology_by_4'),$patient_report->etiology_by)!==false)
+                                           checked
+                                           @endif
+                                           @endisset
+                                           @empty($patient_report)
+                                           @if(in_array(trans('global.patient_report.fields.etiology_by_val.etiology_by_4'),old('etiology_by',[]))!==false)
+                                           checked
+                                        @endif
+                                        @endempty>
+                                    <label for="etiology_by_4">
+                                        3. {{trans('global.patient_report.fields.etiology_by_val.etiology_by_4')}}
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         @if($errors->has('etiology_by'))
@@ -336,7 +352,7 @@
                     </div>
                 </div>
                 <div class="d-flex flex-row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
                         <!-- radio -->
                         <div class="form-group clearfix" data-toggle="tooltip" data-placement="top" data-html="true"
                              title="{{ trans('global.patient.fields.diagnosis_helper') }}">
@@ -346,7 +362,7 @@
                             </div>
                             <div class="form-control {{ $errors->has('diagnosis') ? 'is-invalid' : '' }}">
                                 <div class="icheck-info d-inline">
-                                    <input type="checkbox" id="diagnosis_1" value="{{trans('global.patient_report.fields.diagnosis_val.diagnosis_1')}}"
+                                    <input type="radio" id="diagnosis_1" value="{{trans('global.patient_report.fields.diagnosis_val.diagnosis_1')}}"
                                            name="diagnosis[]" @isset($patient_report)
                                            @if(in_array(trans('global.patient_report.fields.diagnosis_val.diagnosis_1'),$patient_report->diagnosis)!==false)
                                            checked
@@ -362,7 +378,7 @@
                                     </label>
                                 </div>
                                 <div class="icheck-warning d-inline">
-                                    <input type="checkbox" id="diagnosis_2" value="{{trans('global.patient_report.fields.diagnosis_val.diagnosis_2')}}"
+                                    <input type="radio" id="diagnosis_2" value="{{trans('global.patient_report.fields.diagnosis_val.diagnosis_2')}}"
                                            name="diagnosis[]" @isset($patient_report)
                                            @if(in_array(trans('global.patient_report.fields.diagnosis_val.diagnosis_2'),$patient_report->diagnosis)!==false)
                                            checked
@@ -378,7 +394,7 @@
                                     </label>
                                 </div>
                                 <div class="icheck-danger d-inline">
-                                    <input type="checkbox" id="diagnosis_3" value="{{trans('global.patient_report.fields.diagnosis_val.diagnosis_3')}}"
+                                    <input type="radio" id="diagnosis_3" value="{{trans('global.patient_report.fields.diagnosis_val.diagnosis_3')}}"
                                            name="diagnosis[]" @isset($patient_report)
                                            @if(in_array(trans('global.patient_report.fields.diagnosis_val.diagnosis_3'),$patient_report->diagnosis)!==false)
                                            checked
@@ -391,6 +407,22 @@
                                         @endempty>
                                     <label for="diagnosis_3">
                                         3. {{trans('global.patient_report.fields.diagnosis_val.diagnosis_3')}}
+                                    </label>
+                                </div>
+                                <div class="icheck-danger d-inline">
+                                    <input type="radio" id="diagnosis_4" value="{{trans('global.patient_report.fields.diagnosis_val.diagnosis_4')}}"
+                                           name="diagnosis[]" @isset($patient_report)
+                                           @if(in_array(trans('global.patient_report.fields.diagnosis_val.diagnosis_4'),$patient_report->diagnosis)!==false)
+                                           checked
+                                           @endif
+                                           @endisset
+                                           @empty($patient_report)
+                                           @if(in_array(trans('global.patient_report.fields.diagnosis_val.diagnosis_4'),old('diagnosis',[]))!==false)
+                                           checked
+                                        @endif
+                                        @endempty>
+                                    <label for="diagnosis_4">
+                                        3. {{trans('global.patient_report.fields.diagnosis_val.diagnosis_4')}}
                                     </label>
                                 </div>
                             </div>

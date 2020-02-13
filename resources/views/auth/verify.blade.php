@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('Before proceeding, please check your email for a verification link. Check  you spam folder if the verification mail is not inside the mailbox') }}
+                    {{ __('Before proceeding, please check your email for a verification link. Check  you spam folder if the verification mail is not inside the mailbox.') }}
                     {{ __('If you did not receive the email') }},
                         <form action="{{ route('verification.resend') }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">

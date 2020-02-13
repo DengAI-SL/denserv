@@ -32,22 +32,22 @@
                             <label for="hospital">{{ trans('global.patient.fields.hospital') }}*</label>
                             <select id="hospital" name="hospital"
                                     class="form-control select2  {{ $errors->has('hospital') ? 'is-invalid' : '' }}"
-                                    style="width: 100%;" required {{Auth::user()->hospital!=='ALL'?'disabled':''}}>
+                                    style="width: 100%;" required>
                                 @isset($patient)
-                                    <option> {{$patient->hospital}}</option>
+                                    <option selected> {{$patient->hospital}}</option>
                                 @endisset
                                 @empty($patient)
                                     @if(old('hospital','')!=='')
-                                        <option> {{old('hospital')}}</option>
-                                    @else
-                                        {{Auth::user()->hospital!='ALL'?"<option>".old('hospital')."</option>":''}}
+                                        <option selected> {{old('hospital')}}</option>
+                                    @elseif(Auth::user()->hospital!=='ALL')
+                                        <option selected="selected">{{Auth::user()->hospital}}</option>
                                     @endif
-                                    <option
-                                        selected="selected">{{ old('hospital', isset($hospital) ? $hospital: '') }}</option>
-                                @endempty
-                                @foreach($hospitals as $hospital)
-                                    <option> {{$hospital->hospital_name}}</option>
-                                @endforeach
+                                    @endempty
+                                    @if(Auth::user()->hospital=='ALL')
+                                        @foreach($hospitals as $hospital)
+                                            <option> {{$hospital->hospital_name}}</option>
+                                        @endforeach
+                                        @endif
                             </select>
                             @if($errors->has('hospital'))
                                 <div class="invalid-feedback">
@@ -69,7 +69,7 @@
                             <label for="name">{{ trans('global.patient.fields.bht_no') }}*</label>
                             <input type="text" id="bht_no" name="bht_no"
                                    class="form-control  {{ $errors->has('bht_no') ? 'is-invalid' : '' }}"
-                                   value="{{ old('bht_no', isset($patient) ? $patient->bht_no : '') }}" required>
+                                   value="{{ old('bht_no', isset($patient) ? $patient->bht_no : '') }}" style="text-transform: uppercase;" required>
                             @if($errors->has('bht_no'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('bht_no') }}
@@ -79,7 +79,7 @@
                                     Looks good!
                                 </div>
                                 <div class="invalid-feedback">
-                                    {{ trans('global.patient.fields.bht_no_error') }} is required
+                                    {{ trans('global.patient.fields.bht_no_error') }}
                                 </div>
                             @endif
                         </div>
@@ -101,7 +101,7 @@
                                     Looks good!
                                 </div>
                                 <div class="invalid-feedback">
-                                    {{ trans('global.patient.fields.notification_at_error') }} is required
+                                    {{ trans('global.patient.fields.notification_at_error') }}
                                 </div>
                             @endif
                         </div>
@@ -178,7 +178,7 @@
                             <label for="age_months">{{ trans('global.patient.fields.age_months') }}</label>
                             <input type="number" id="age_months" name="age_months"
                                    class="form-control  {{ $errors->has('age_months') ? 'is-invalid' : '' }}"
-                                   value="{{ old('age_months', isset($patient) ? $patient->age_months : '') }}" min="0"
+                                   value="{{ old('age_months', isset($patient) ? $patient->age_months : '') }}" min="0" max="12"
                                    step="1">
                             @if($errors->has('age_months'))
                                 <div class="invalid-feedback">
@@ -197,7 +197,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="date_of_birth">{{ trans('global.patient.fields.date_of_birth') }}*</label>
+                            <label for="date_of_birth">{{ trans('global.patient.fields.date_of_birth') }}</label>
                             <input type="text" id="date_of_birth" name="date_of_birth"
                                    class="form-control {{ $errors->has('date_of_birth') ? 'is-invalid' : '' }}"
                                    value="{{ old('date_of_birth', isset($patient) ? $patient->date_of_birth : '') }}"
@@ -223,7 +223,7 @@
                     <div class="col-sm-5">
                         <!-- radio -->
                         <div class="form-group clearfix" data-toggle="tooltip" data-placement="top" data-html="true"
-                             title="{{ trans('global.patient.fields.gender_helper') }}*">
+                             title="{{ trans('global.patient.fields.gender_helper') }}">
                             <div class="row">
                                 <label for="gender">{{ trans('global.patient.fields.gender') }} </label>
                             </div>
@@ -394,7 +394,7 @@
                              title="{{ trans('global.patient.fields.occupation_helper') }}">
                             <label for="occupation">{{ trans('global.patient.fields.occupation') }}</label>
                             <select id="occupation" name="occupation"
-                                    class="form-control select2  {{ $errors->has('occupation') ? 'is-invalid' : '' }}"
+                                    class="form-control select2 big-select2 {{ $errors->has('occupation') ? 'is-invalid' : '' }}"
                                     style="width: 100%;" required>
                                 <option
                                     selected="selected">{{ old('occupation', isset($patient) ? $patient->occupation: '') }}</option>
@@ -427,7 +427,7 @@
                             <label for="address">{{ trans('global.patient.fields.address') }}</label>
                             <input type="text" id="address" name="address"
                                    class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}"
-                                   value="{{ old('address', isset($patient) ? $patient->address : '') }}">
+                                   value="{{ old('address', isset($patient) ? $patient->address : '') }}" style="text-transform: uppercase;">
                             @if($errors->has('address'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('address') }}
@@ -542,7 +542,12 @@
                 </div>
 
                 <div>
-                    <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
+                    @can('patient_report_create')
+                        <input class="btn btn-danger" type="submit" value="{{ trans('global.next') }}">
+                    @endcan
+                    @cannot('patient_report_create')
+                            <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
+                        @endcannot
                 </div>
             </form>
         </div>
@@ -669,6 +674,14 @@
                 });
 
             });
+
+            $('#age_years').change(function (e) {
+
+                var year = $(this).val();
+                var xYearBeforeNow = new Date();
+                xYearBeforeNow.setFullYear(xYearBeforeNow.getFullYear() -year);
+                $('#date_of_birth').data('DateTimePicker').defaultDate(xYearBeforeNow);
+            });
         });
 
         function mapData(array) {
@@ -681,7 +694,5 @@
             }
             return mappedArray;
         }
-
-
     </script>
 @endsection

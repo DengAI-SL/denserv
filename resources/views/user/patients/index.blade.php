@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-@can('user_create')
+@can('patient_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route("user.patients.create") }}">
@@ -11,7 +11,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('global.patient.title_singular') }} {{ trans('global.list') }}
+        {{ trans('global.patient.title_singular') }} {{ trans('global.list') }} for {{Auth::user()->hospital!=='ALL'?Auth::user()->hospital:Auth::user()->hospital.' Hospitals'}}
     </div>
 
     <div class="card-body">

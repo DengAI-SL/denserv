@@ -86,7 +86,7 @@
                 @can('patient_management_access')
                     <li class="nav-item has-treeview {{ request()->is('user/patients*') ? 'menu-open' : '' }} {{ request()->is('user/patient*') ? 'menu-open' : '' }}">
                         <a class="nav-link nav-dropdown-toggle">
-                            <i class="fas fa-users">
+                            <i class="fas fa-wheelchair">
 
                             </i>
                             <p>
@@ -98,7 +98,7 @@
                             @can('patient_access')
                                 <li class="nav-item">
                                     <a href="{{ route("user.patients.index") }}" class="nav-link {{ request()->is('user/patients') ? 'active' : '' }}">
-                                        <i class="fas fa-unlock-alt">
+                                        <i class="fas fa-eye">
 
                                         </i>
                                         <p>
@@ -112,7 +112,7 @@
                             @can('patient_create')
                                 <li class="nav-item">
                                     <a href="{{ route("user.patients.create") }}" class="nav-link {{ request()->is('user/patients/create') ? 'active' : '' }}">
-                                        <i class="fas fa-unlock-alt">
+                                        <i class="fas fa-plus">
 
                                         </i>
                                         <p>
@@ -126,7 +126,7 @@
                             @can('patient_access')
                                 <li class="nav-item">
                                     <a href="{{ route("user.patients.incomplete") }}" class="nav-link {{ request()->is('user/patient/incomplete') ? 'active' : '' }}">
-                                        <i class="fas fa-unlock-alt">
+                                        <i class="fas fa-code-branch">
 
                                         </i>
                                         <p>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin_no_side')
 @section('content')
 <div class="login-box">
     <div class="login-logo">

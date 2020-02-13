@@ -4,9 +4,9 @@ Route::redirect('/', '/login');
 
 Route::redirect('/home', '/admin');
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => false,'verify'=>true]);
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth','verified']], function () {
     Route::get('/', 'HomeController@index')->name('home');
 
     Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');
@@ -23,7 +23,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
 });
 
-Route::group(['prefix' => 'user', 'as' => 'user.', 'namespace' => 'User', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'user', 'as' => 'user.', 'namespace' => 'User', 'middleware' => ['auth','verified']], function () {
     Route::get('/', 'HomeController@index')->name('home');
 
     Route::delete('users/destroy', 'PatientsController@massDestroy')->name('patients.massDestroy');

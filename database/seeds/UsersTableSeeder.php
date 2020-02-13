@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
             'created_at'     => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at'     => Carbon\Carbon::now()->toDateTimeString(),
             'deleted_at'     => null,
+            'email_verified_at' => \Carbon\Carbon::now()->toDateTimeString(),
         ]];
 
         User::insert($users);

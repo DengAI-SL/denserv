@@ -34,6 +34,7 @@ class PatientReport extends Model
         'first_FBC_count',
         "diagnosis",
         "dhf_complication",
+        "eds_complication",
         'outcome',
         'date_of_outcome',
         'if_transferred_hospital',

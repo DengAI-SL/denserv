@@ -96,6 +96,9 @@
                                 {{ trans('global.patient_report.fields.dhf_complication') }}
                             </th>
                             <th>
+                                {{ trans('global.patient_report.fields.eds_complication') }}
+                            </th>
+                            <th>
                                 {{ trans('global.patient_report.fields.outcome') }}
                             </th>
                             <th>
@@ -194,7 +197,11 @@
                                     @foreach($patient->patientReport->dhf_complication as $item)
                                         <span class="badge badge-danger">{{ $item }}</span>
                                     @endforeach
-                                </td><td>
+                                </td>
+                                <td>
+                                    {{$patient->patientReport->eds_complication}}
+                                </td>
+                                <td>
                                     {{$patient->patientReport->outcome}}
                                 </td>
                                 <td>

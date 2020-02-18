@@ -123,6 +123,7 @@ return [
             'deleted_at_helper'        => '',
             'hospital'      =>      'Hospital',
             'hospital_helper'      =>      '',
+            'hospital_placeholder'  =>      'Select Hospital for the user hospital',
         ],
     ],
     'name'                                 => 'Name',
@@ -351,6 +352,7 @@ return [
             'id_helper'          => '',
             'hospital'      =>      'Hospital',
             'hospital_helper'      =>      'Select the hospital of the Patient if you have access to multiple hospitals, other wise leave default selected.',
+            'hospital_placeholder'  =>      'Select your hospital',
             'bht_no'        =>      'BHT#',
             'bht_no_helper'        =>      'Enter the Bead Head Ticket Number',
             'bht_no_error'        =>      'Bead Head ticket Number is compulsory',
@@ -378,6 +380,7 @@ return [
             'occupation'    =>      'Occupation',
             'occupation_helper'    =>      'Select the occupation from the following list.',
             'occupation_error'    =>      'Occupation of the patient is required.',
+            'occupation_placeholder'    =>  'Select the occupation of the Patient',
             'address'       =>      'Address',
             'address_helper'       =>      ' Enter the address of the patient',
             'district'    =>      'District',
@@ -451,6 +454,7 @@ return [
                 'dhf_complication_3'   => 'Organ Involvement',
 
             ],
+            'eds_complication'         =>  'Eds Complications',
             'outcome'         =>  'Outcome',
             'outcome_val'     =>  [
                 'outcome_1'   => 'Discharged',

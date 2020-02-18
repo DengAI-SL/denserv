@@ -59,6 +59,9 @@ class StorePatientReportRequest extends FormRequest
                 'required_if:diagnosis,'.trans('global.patient_report.fields.diagnosis_val.diagnosis_3'),
                 'array',
             ],
+            'eds_complication'     =>[
+                'required_if:diagnosis,'.trans('global.patient_report.fields.diagnosis_val.diagnosis_4'),
+            ],
             'outcome'     =>[
                 'required',
             ],

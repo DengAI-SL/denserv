@@ -111,13 +111,15 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="date_of_admission">{{ trans('global.patient_report.fields.date_of_admission') }}*</label>
+                            <label for="date_of_admission">{{ trans('global.patient_report.fields.date_of_admission') }}
+                                *</label>
                             <input type="text" id="date_of_admission" name="date_of_admission"
                                    class="form-control {{ $errors->has('date_of_admission') ? 'is-invalid' : '' }}"
                                    value="{{ old('date_of_admission', isset($patient_report) ? $patient_report->date_of_admission : '') }}"
                                    data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy"
                                    data-toggle="tooltip" data-placement="top" data-html="true"
-                                   title="{{ trans('global.patient_report.fields.date_of_admission_helper') }}" data-mask required>
+                                   title="{{ trans('global.patient_report.fields.date_of_admission_helper') }}"
+                                   data-mask required>
                             @if($errors->has('date_of_admission'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('date_of_admission') }}
@@ -136,13 +138,15 @@
                 <div class="d-flex flex-row">
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="date_of_onset">{{ trans('global.patient_report.fields.date_of_onset') }}*</label>
+                            <label for="date_of_onset">{{ trans('global.patient_report.fields.date_of_onset') }}
+                                *</label>
                             <input type="text" id="date_of_onset" name="date_of_onset"
                                    class="form-control {{ $errors->has('date_of_onset') ? 'is-invalid' : '' }}"
                                    value="{{ old('date_of_onset', isset($patient_report) ? $patient_report->date_of_onset : '') }}"
                                    data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy"
                                    data-toggle="tooltip" data-placement="top" data-html="true"
-                                   title="{{ trans('global.patient_report.fields.date_of_onset_helper') }}" data-mask required>
+                                   title="{{ trans('global.patient_report.fields.date_of_onset_helper') }}" data-mask
+                                   required>
                             @if($errors->has('date_of_onset'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('date_of_onset') }}
@@ -163,7 +167,8 @@
                              title="{{ trans('global.patient.fields.diagnosed_by_helper') }}">
                             <div class="row">
                                 <label
-                                    for="diagnosed_by">{{ trans('global.patient_report.fields.diagnosed_by') }} *</label>
+                                    for="diagnosed_by">{{ trans('global.patient_report.fields.diagnosed_by') }}
+                                    *</label>
                             </div>
                             <div class="form-control {{ $errors->has('diagnosed_by') ? 'is-invalid' : '' }}">
                                 <div class="icheck-success d-inline">
@@ -223,7 +228,8 @@
                             </div>
                             <div class="form-control {{ $errors->has('etiology_by') ? 'is-invalid' : '' }}">
                                 <div class="icheck-primary d-inline">
-                                    <input type="checkbox" id="etiology_by_1" value="{{trans('global.patient_report.fields.etiology_by_val.etiology_by_1')}}"
+                                    <input type="checkbox" id="etiology_by_1"
+                                           value="{{trans('global.patient_report.fields.etiology_by_val.etiology_by_1')}}"
                                            name="etiology_by[]" @isset($patient_report)
                                            @if(in_array(trans('global.patient_report.fields.etiology_by_val.etiology_by_1'),$patient_report->etiology_by)!==false)
                                            checked
@@ -239,7 +245,8 @@
                                     </label>
                                 </div>
                                 <div class="icheck-primary d-inline">
-                                    <input type="checkbox" id="etiology_by_2" value="{{trans('global.patient_report.fields.etiology_by_val.etiology_by_2')}}"
+                                    <input type="checkbox" id="etiology_by_2"
+                                           value="{{trans('global.patient_report.fields.etiology_by_val.etiology_by_2')}}"
                                            name="etiology_by[]" @isset($patient_report)
                                            @if(in_array(trans('global.patient_report.fields.etiology_by_val.etiology_by_2'),$patient_report->etiology_by)!==false)
                                            checked
@@ -255,7 +262,8 @@
                                     </label>
                                 </div>
                                 <div class="icheck-primary d-inline">
-                                    <input type="checkbox" id="etiology_by_3" value="{{trans('global.patient_report.fields.etiology_by_val.etiology_by_3')}}"
+                                    <input type="checkbox" id="etiology_by_3"
+                                           value="{{trans('global.patient_report.fields.etiology_by_val.etiology_by_3')}}"
                                            name="etiology_by[]" @isset($patient_report)
                                            @if(in_array(trans('global.patient_report.fields.etiology_by_val.etiology_by_3'),$patient_report->etiology_by)!==false)
                                            checked
@@ -271,7 +279,8 @@
                                     </label>
                                 </div>
                                 <div class="icheck-primary d-inline">
-                                    <input type="checkbox" id="etiology_by_4" value="{{trans('global.patient_report.fields.etiology_by_val.etiology_by_3')}}"
+                                    <input type="checkbox" id="etiology_by_4"
+                                           value="{{trans('global.patient_report.fields.etiology_by_val.etiology_by_3')}}"
                                            name="etiology_by[]" @isset($patient_report)
                                            @if(in_array(trans('global.patient_report.fields.etiology_by_val.etiology_by_4'),$patient_report->etiology_by)!==false)
                                            checked
@@ -305,13 +314,15 @@
                 <div class="d-flex flex-row">
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="date_of_first_FBC">{{ trans('global.patient_report.fields.date_of_first_FBC') }}*</label>
+                            <label for="date_of_first_FBC">{{ trans('global.patient_report.fields.date_of_first_FBC') }}
+                                *</label>
                             <input type="text" id="date_of_first_FBC" name="date_of_first_FBC"
                                    class="form-control {{ $errors->has('date_of_first_FBC') ? 'is-invalid' : '' }}"
                                    value="{{ old('date_of_first_FBC', isset($patient_report) ? $patient_report->date_of_first_FBC : '') }}"
                                    data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy"
                                    data-toggle="tooltip" data-placement="top" data-html="true"
-                                   title="{{ trans('global.patient_report.fields.date_of_first_FBC_helper') }}" data-mask required>
+                                   title="{{ trans('global.patient_report.fields.date_of_first_FBC_helper') }}"
+                                   data-mask required>
                             @if($errors->has('date_of_first_FBC'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('date_of_first_FBC') }}
@@ -330,10 +341,12 @@
 
                         <div class="form-group" data-toggle="tooltip" data-placement="top" data-html="true"
                              title="{{ trans('global.patient_report.fields.first_FBC_count_helper') }}">
-                            <label for="first_FBC_count">{{ trans('global.patient_report.fields.first_FBC_count') }}*</label>
+                            <label for="first_FBC_count">{{ trans('global.patient_report.fields.first_FBC_count') }}
+                                *</label>
                             <input type="number" id="first_FBC_count" name="first_FBC_count"
                                    class="form-control  {{ $errors->has('first_FBC_count') ? 'is-invalid' : '' }}"
-                                   value="{{ old('first_FBC_count', isset($patient_report) ? $patient_report->first_FBC_count : '') }}" min="0"
+                                   value="{{ old('first_FBC_count', isset($patient_report) ? $patient_report->first_FBC_count : '') }}"
+                                   min="0"
                                    step="1" required>
                             @if($errors->has('first_FBC_count'))
                                 <div class="invalid-feedback">
@@ -362,7 +375,8 @@
                             </div>
                             <div class="form-control {{ $errors->has('diagnosis') ? 'is-invalid' : '' }}">
                                 <div class="icheck-info d-inline">
-                                    <input type="radio" id="diagnosis_1" value="{{trans('global.patient_report.fields.diagnosis_val.diagnosis_1')}}"
+                                    <input type="radio" id="diagnosis_1"
+                                           value="{{trans('global.patient_report.fields.diagnosis_val.diagnosis_1')}}"
                                            name="diagnosis[]" @isset($patient_report)
                                            @if(in_array(trans('global.patient_report.fields.diagnosis_val.diagnosis_1'),$patient_report->diagnosis)!==false)
                                            checked
@@ -378,7 +392,8 @@
                                     </label>
                                 </div>
                                 <div class="icheck-warning d-inline">
-                                    <input type="radio" id="diagnosis_2" value="{{trans('global.patient_report.fields.diagnosis_val.diagnosis_2')}}"
+                                    <input type="radio" id="diagnosis_2"
+                                           value="{{trans('global.patient_report.fields.diagnosis_val.diagnosis_2')}}"
                                            name="diagnosis[]" @isset($patient_report)
                                            @if(in_array(trans('global.patient_report.fields.diagnosis_val.diagnosis_2'),$patient_report->diagnosis)!==false)
                                            checked
@@ -394,7 +409,8 @@
                                     </label>
                                 </div>
                                 <div class="icheck-danger d-inline">
-                                    <input type="radio" id="diagnosis_3" value="{{trans('global.patient_report.fields.diagnosis_val.diagnosis_3')}}"
+                                    <input type="radio" id="diagnosis_3"
+                                           value="{{trans('global.patient_report.fields.diagnosis_val.diagnosis_3')}}"
                                            name="diagnosis[]" @isset($patient_report)
                                            @if(in_array(trans('global.patient_report.fields.diagnosis_val.diagnosis_3'),$patient_report->diagnosis)!==false)
                                            checked
@@ -410,7 +426,8 @@
                                     </label>
                                 </div>
                                 <div class="icheck-danger d-inline">
-                                    <input type="radio" id="diagnosis_4" value="{{trans('global.patient_report.fields.diagnosis_val.diagnosis_4')}}"
+                                    <input type="radio" id="diagnosis_4"
+                                           value="{{trans('global.patient_report.fields.diagnosis_val.diagnosis_4')}}"
                                            name="diagnosis[]" @isset($patient_report)
                                            @if(in_array(trans('global.patient_report.fields.diagnosis_val.diagnosis_4'),$patient_report->diagnosis)!==false)
                                            checked
@@ -440,7 +457,7 @@
                             </div>
                         @endif
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" id="dhf_complication_form">
                         <!-- radio -->
                         <div class="form-group clearfix" data-toggle="tooltip" data-placement="top" data-html="true"
                              title="{{ trans('global.patient.fields.dhf_complication_helper') }}">
@@ -450,8 +467,10 @@
                             </div>
                             <div class="form-control {{ $errors->has('dhf_complication') ? 'is-invalid' : '' }}">
                                 <div class="icheck-info d-inline">
-                                    <input type="checkbox" id="dhf_complication_1" value="{{trans('global.patient_report.fields.dhf_complication_val.dhf_complication_1')}}"
-                                           name="dhf_complication[]" disabled="true"
+                                    <input type="checkbox" id="dhf_complication_1"
+                                           value="{{trans('global.patient_report.fields.dhf_complication_val.dhf_complication_1')}}"
+                                           name="dhf_complication[]"
+                                           {{--disabled="true"--}}
                                            @isset($patient_report)
                                            @if(in_array(trans('global.patient_report.fields.dhf_complication_val.dhf_complication_1'),$patient_report->dhf_complication)!==false)
                                            checked
@@ -467,8 +486,10 @@
                                     </label>
                                 </div>
                                 <div class="icheck-warning d-inline">
-                                    <input type="checkbox" id="dhf_complication_2" value="{{trans('global.patient_report.fields.dhf_complication_val.dhf_complication_2')}}"
-                                           name="dhf_complication[]" disabled="true"
+                                    <input type="checkbox" id="dhf_complication_2"
+                                           value="{{trans('global.patient_report.fields.dhf_complication_val.dhf_complication_2')}}"
+                                           name="dhf_complication[]"
+                                           {{--disabled="true"--}}
                                            @isset($patient_report)
                                            @if(in_array(trans('global.patient_report.fields.dhf_complication_val.dhf_complication_2'),$patient_report->dhf_complication)!==false)
                                            checked
@@ -484,8 +505,10 @@
                                     </label>
                                 </div>
                                 <div class="icheck-danger d-inline">
-                                    <input type="checkbox" id="dhf_complication_3" value="{{trans('global.patient_report.fields.dhf_complication_val.dhf_complication_3')}}"
-                                           name="dhf_complication[]" disabled="true"
+                                    <input type="checkbox" id="dhf_complication_3"
+                                           value="{{trans('global.patient_report.fields.dhf_complication_val.dhf_complication_3')}}"
+                                           name="dhf_complication[]"
+                                           {{--disabled="true"--}}
                                            @isset($patient_report)
                                            @if(in_array(trans('global.patient_report.fields.dhf_complication_val.dhf_complication_3'),$patient_report->dhf_complication)!==false)
                                            checked
@@ -515,6 +538,29 @@
                             </div>
                         @endif
                     </div>
+                    <div class="col-md-6" id="eds_complication_form">
+                        <div class="form-group" data-toggle="tooltip"
+                             data-placement="top" data-html="true"
+                             title="{{ trans('global.patient_report.fields.eds_complication_helper') }}">
+                            <label
+                                for="eds_complication">{{ trans('global.patient_report.fields.eds_complication') }}</label>
+                            <input type="text" id="eds_complication" name="eds_complication"
+                                   class="form-control {{ $errors->has('eds_complication') ? 'is-invalid' : '' }}"
+                                   value="{{ old('eds_complication', isset($patient_report) ? $patient_report->eds_complication : '') }}">
+                            @if($errors->has('eds_complication'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('eds_complication') }}
+                                </div>
+                            @else
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    {{ trans('global.patient_report.fields.eds_complication_error') }}
+                                </div>
+                            @endif
+                        </div>
+                    </div>
                 </div>
                 <div class="d-flex flex-row">
                     <div class="col-sm-7">
@@ -527,7 +573,8 @@
                             </div>
                             <div class="form-control {{ $errors->has('outcome') ? 'is-invalid' : '' }}">
                                 <div class="icheck-success d-inline">
-                                    <input type="radio" id="outcome_1" value="{{trans('global.patient_report.fields.outcome_val.outcome_1')}}"
+                                    <input type="radio" id="outcome_1"
+                                           value="{{trans('global.patient_report.fields.outcome_val.outcome_1')}}"
                                            name="outcome"
                                            @isset($patient_report)
                                            @if(trans('global.patient_report.fields.outcome_val.outcome_1')===$patient_report->outcome)
@@ -544,7 +591,8 @@
                                     </label>
                                 </div>
                                 <div class="icheck-warning d-inline">
-                                    <input type="radio" id="outcome_2" value="{{trans('global.patient_report.fields.outcome_val.outcome_2')}}"
+                                    <input type="radio" id="outcome_2"
+                                           value="{{trans('global.patient_report.fields.outcome_val.outcome_2')}}"
                                            name="outcome"
                                            @isset($patient_report)
                                            @if(trans('global.patient_report.fields.outcome_val.outcome_2')===$patient_report->outcome)
@@ -561,7 +609,8 @@
                                     </label>
                                 </div>
                                 <div class="icheck-danger d-inline">
-                                    <input type="radio" id="outcome_3" value="{{trans('global.patient_report.fields.outcome_val.outcome_3')}}"
+                                    <input type="radio" id="outcome_3"
+                                           value="{{trans('global.patient_report.fields.outcome_val.outcome_3')}}"
                                            name="outcome"
                                            @isset($patient_report)
                                            @if(trans('global.patient_report.fields.outcome_val.outcome_3')===$patient_report->outcome)
@@ -578,7 +627,8 @@
                                     </label>
                                 </div>
                                 <div class="icheck-primary d-inline">
-                                    <input type="radio" id="outcome_4" value="{{trans('global.patient_report.fields.outcome_val.outcome_4')}}"
+                                    <input type="radio" id="outcome_4"
+                                           value="{{trans('global.patient_report.fields.outcome_val.outcome_4')}}"
                                            name="outcome"
                                            @isset($patient_report)
                                            @if(trans('global.patient_report.fields.outcome_val.outcome_4')===$patient_report->outcome)
@@ -612,7 +662,8 @@
                     <div class="col-md-3">
                         <div class="form-group" data-toggle="tooltip" data-placement="top" data-html="true"
                              title="{{ trans('global.patient_report.fields.if_transferred_hospital_helper') }}">
-                            <label for="if_transferred_hospital">{{ trans('global.patient_report.fields.if_transferred_hospital') }}</label>
+                            <label
+                                for="if_transferred_hospital">{{ trans('global.patient_report.fields.if_transferred_hospital') }}</label>
                             <select id="if_transferred_hospital" name="if_transferred_hospital"
                                     class="form-control select2  {{ $errors->has('if_transferred_hospital') ? 'is-invalid' : '' }}"
                                     style="width: 100%;" {{old('if_transferred_hospital',isset($patient_report)?$patient_report->if_transferred_hospital:'')==''?'disabled':''}}>
@@ -638,20 +689,23 @@
                                     Looks good!
                                 </div>
                                 <div class="invalid-feedback">
-                                    {{ trans('global.patient_report.fields.if_transferred_hospital_error') }} is required
+                                    {{ trans('global.patient_report.fields.if_transferred_hospital_error') }} is
+                                    required
                                 </div>
                             @endif
                         </div>
                     </div>
                     <div class="col-md-2">
                         <div class="form-group">
-                            <label for="date_of_outcome">{{ trans('global.patient_report.fields.date_of_outcome') }}*</label>
+                            <label for="date_of_outcome">{{ trans('global.patient_report.fields.date_of_outcome') }}
+                                *</label>
                             <input type="text" id="date_of_outcome" name="date_of_outcome"
                                    class="form-control {{ $errors->has('date_of_outcome') ? 'is-invalid' : '' }}"
                                    value="{{ old('date_of_outcome', isset($patient_report) ? $patient_report->date_of_outcome : '') }}"
                                    data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy"
                                    data-toggle="tooltip" data-placement="top" data-html="true"
-                                   title="{{ trans('global.patient_report.fields.date_of_outcome_helper') }}" data-mask required>
+                                   title="{{ trans('global.patient_report.fields.date_of_outcome_helper') }}" data-mask
+                                   required>
                             @if($errors->has('date_of_outcome'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('date_of_outcome') }}
@@ -668,10 +722,10 @@
                     </div>
                 </div>
                 <div>
-            <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
+                    <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
+                </div>
+            </form>
         </div>
-        </form>
-    </div>
     </div>
 @endsection
 
@@ -719,6 +773,32 @@
         })();
     </script>
     <script type="text/javascript">
+        function show_dhf_complication_form() {
+            $('#eds_complication_form').hide();
+            $('#eds_complication').removeAttr('required');
+            $('#dhf_complication_form').show();
+            $('#dhf_complication_1').prop("required",true);
+
+
+            console.log("Showing dhf");
+        }
+
+        function show_eds_complication_form() {
+            $('#dhf_complication_form').hide();
+            $('#dhf_complication_1').removeAttr('required');
+            $('#eds_complication_form').show();
+            $('#eds_complication').prop("required",true);
+
+            console.log("showing eds");
+
+        }
+
+        function hide_both_eds_dhf() {
+
+            $('#dhf_complication_form').hide()
+            $('#eds_complication_form').hide()
+            console.log("hiding both eds dhf");
+        }
 
         $(document).ready(function () {
 
@@ -737,55 +817,68 @@
                 $('#transferred_from').val('');
                 $('#transferred_from').prop("disabled", true)
             }
-            else if (mode_of_admission === "transferred"){
-            $('#transferred_from').prop("disabled", false);
+            else if (mode_of_admission === "transferred") {
+                $('#transferred_from').prop("disabled", false);
             }
-
-            @if(in_array(trans('global.patient_report.fields.dhf_complication_val.dhf_complication_3'),old('dhf_complication', isset($patient_report) ? $patient_report->dhf_complication : [])) !==false)
-                $('#dhf_complication_1').prop("disabled", false);
-                $('#dhf_complication_2').prop("disabled", false);
-                $('#dhf_complication_3').prop("disabled", false);
-
+            @if(in_array(trans('global.patient_report.fields.diagnosis_val.diagnosis_3'),old('diagnosis', isset($patient_report) ? $patient_report->diagnosis : [])) !==false)
+            show_dhf_complication_form()
+            @elseif(in_array(trans('global.patient_report.fields.diagnosis_val.diagnosis_4'),old('diagnosis', isset($patient_report) ? $patient_report->diagnosis : [])) !==false)
+            show_eds_complication_form();
+            @else
+            hide_both_eds_dhf();
             @endif
-            $('#diagnosis_3').click(function () {
 
-                if($(this).prop("checked")===true){
-                    $('#dhf_complication_1').prop("disabled", false);
-                    $('#dhf_complication_2').prop("disabled", false);
-                    $('#dhf_complication_3').prop("disabled", false);
+            $("input[name='diagnosis[]']").click(function () {
+
+                var radioValue = $(this).val();
+                var complicated_dhf = "{{trans('global.patient_report.fields.diagnosis_val.diagnosis_3')}}";
+                var complicated_eds = "{{trans('global.patient_report.fields.diagnosis_val.diagnosis_4')}}";
+
+                if (radioValue === complicated_dhf) {
+                    show_dhf_complication_form();
+                    console.log(radioValue);
+                } else if (radioValue === complicated_eds) {
+                    show_eds_complication_form()
                 }
-                else{
-                    $('#dhf_complication_1').prop("disabled", true);
-                    $('#dhf_complication_2').prop("disabled", true);
-                    $('#dhf_complication_3').prop("disabled", true);
-                }
+                else {
+                    hide_both_eds_dhf();
                 }
 
-            );
+            });
 
             $('#outcome_2').click(function (e) {
                 console.log("asdfasd");
-{{--                $('#if_transferred_hospital').val("{{ old('transferred_from', isset($patient_report) ? $patient_report->transferred_from : '') }}");--}}
-                $('#if_transferred_hospital').prop("disabled",false);
+                {{--                $('#if_transferred_hospital').val("{{ old('transferred_from', isset($patient_report) ? $patient_report->transferred_from : '') }}");--}}
+                $('#if_transferred_hospital').prop("disabled", false);
             });
             $('#outcome_1').click(function (e) {
                 {{--                $('#if_transferred_hospital').val("{{ old('transferred_from', isset($patient_report) ? $patient_report->transferred_from : '') }}");--}}
-                $('#if_transferred_hospital').prop("disabled",true);
+                $('#if_transferred_hospital').prop("disabled", true);
                 $('#if_transferred_hospital').val(null).trigger('change');
             });
             $('#outcome_3').click(function (e) {
                 {{--                $('#if_transferred_hospital').val("{{ old('transferred_from', isset($patient_report) ? $patient_report->transferred_from : '') }}");--}}
-                $('#if_transferred_hospital').prop("disabled",true);
+                $('#if_transferred_hospital').prop("disabled", true);
                 $('#if_transferred_hospital').val(null).trigger('change');
             });
             $('#outcome_4').click(function (e) {
                 {{--                $('#if_transferred_hospital').val("{{ old('transferred_from', isset($patient_report) ? $patient_report->transferred_from : '') }}");--}}
-                $('#if_transferred_hospital').prop("disabled",true);
+                $('#if_transferred_hospital').prop("disabled", true);
                 $('#if_transferred_hospital').val(null).trigger('change');
             });
             $('#if_transferred_hospital').select2({
                 placeholder: "{{trans('global.patient_report.fields.if_transferred_hospital_placeholder')}}"
             });
-        })
+        });
+
+        $('#date_of_admission').change(function (e) {
+
+            var date_of_admission = $(this).val();
+            $('#date_of_onset').data('DateTimePicker').defaultDate(date_of_admission);
+            $('#date_of_first_FBC').data('DateTimePicker').defaultDate(date_of_admission);
+            $('#date_of_outcome').data('DateTimePicker').defaultDate(date_of_admission);
+
+        });
+
     </script>
 @endsection

@@ -37,6 +37,7 @@ class CreatePatientReportsTable extends Migration
 //            $table->boolean("diagnosis_DHF_complications")->default(false);
             $table->string('diagnosis');
             $table->string('dhf_complication')->nullable();
+            $table->string('eds_complication')->nullable();
             $table->string('outcome');
             $table->dateTime('date_of_outcome');
             $table->string('if_transferred_hospital')->nullable();

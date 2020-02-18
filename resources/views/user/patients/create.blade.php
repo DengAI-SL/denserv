@@ -33,6 +33,7 @@
                             <select id="hospital" name="hospital"
                                     class="form-control select2  {{ $errors->has('hospital') ? 'is-invalid' : '' }}"
                                     style="width: 100%;" required>
+                                <option></option>
                                 @isset($patient)
                                     <option selected> {{$patient->hospital}}</option>
                                 @endisset
@@ -596,6 +597,14 @@
 
         var csrf = $('meta[name=csrf-token]').attr('content');
         $(document).ready(function () {
+
+            $('#hospital').select2({
+                placeholder: "{{trans('global.patient.fields.hospital_placeholder')}}",
+            });
+            $('#occupation').select2({
+                placeholder: "{{trans('global.patient.fields.occupation_placeholder')}}",
+            });
+
             $('#district').select2({
                 placeholder: "{{trans('global.patient.fields.districts_placeholder')}}",
             });

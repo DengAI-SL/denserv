@@ -199,6 +199,16 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('global.patient_report.fields.eds_complication') }}
+                        </th>
+                        <td>
+                            {{$patient->patientReport->eds_complication}}
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('global.patient_report.fields.outcome') }}
                         </th>
 

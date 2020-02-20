@@ -38,6 +38,8 @@ class UsersController extends Controller
         $user = User::create($request->all());
         $user->roles()->sync($request->input('roles', []));
 
+        $user->sendEmailVerificationNotification();
+
         return redirect()->route('admin.users.index');
     }
 

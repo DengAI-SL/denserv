@@ -17,6 +17,7 @@ class LocationsMapSeeder extends Seeder
 
         ];
         print("Reading the excel file");
+//        ini_set('memory_limit', '-1');
         $excel = Excel::toArray(true,'SL_GN.xlsx');
         $no_of_rows = sizeof($excel[0]);
 

@@ -4,14 +4,8 @@
 ## What's inside
 
 - Adminpanel with default one admin user (_admin@admin.com/password_) and two roles
-- Users/Roles/permissions management function (based on our own code similar to Spatie Roles-Permissions)
-- One demo CRUD for Products management - name/description/price
-- Everything that is needed for CRUDs: model+migration+controller+requests+views
-
-From that boilerplate you can manually create more CRUDs, assign permissions etc. Or use our [online generator](https://2019.quickadminpanel.com) for this.
-
-__Notice__: AdminLTE 3 version was not released officially. At the time of writing (April 2019), the latest was [v3.0.0-Alpha 2 release in May 2018](https://github.com/ColorlibHQ/AdminLTE/releases/tag/v3.0.0-alpha.2). But, at current alpha state, the theme is good enough to use for simple CRUDs like ours.
-
+- Users/Roles/permissions management function (similar to Spatie Roles-Permissions)
+- Creating, editing, deleting, viewing Dengue patients Data
 ## Screenshots
 
 ## How to use

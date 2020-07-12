@@ -109,23 +109,6 @@
                         </div>
                     </div>
                 </div>
-                {{--<div class="d-flex flex-row">--}}
-                {{--<div class="col-md-4">--}}
-                {{--<div class="form-group {{ $errors->has('case_no') ? 'is-invalid' : '' }}">--}}
-                {{--<label for="case_no">{{ trans('global.patient.fields.case_no') }}*</label>--}}
-                {{--<input type="text" id="case_no" name="case_no" class="form-control"--}}
-                {{--value="{{ old('case_no', isset($patient) ? $patient->case_no : '') }}">--}}
-                {{--@if($errors->has('case_no'))--}}
-                {{--<p class="help-block">--}}
-                {{--{{ $errors->first('case_no') }}--}}
-                {{--</p>--}}
-                {{--@endif--}}
-                {{--<p class="helper-block">--}}
-                {{--{{ trans('global.patient.fields.case_no_helper') }}--}}
-                {{--</p>--}}
-                {{--</div>--}}
-                {{--</div>--}}
-                {{--</div>--}}
                 <div class="d-flex flex-row">
                     <div class="col-md-4">
 
